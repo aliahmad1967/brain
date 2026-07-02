@@ -1,0 +1,20 @@
+[project]
+name = "brain-search"
+version = "0.1.0"
+description = "Hybrid search (dense + sparse), document indexing, and reranking for Brain"
+requires-python = ">=3.13"
+dependencies = [
+    "brain-core",
+    "brain-shared",
+]
+
+[tool.uv.sources]
+brain-core = { workspace = true }
+brain-shared = { workspace = true }
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/brain"]
+
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"

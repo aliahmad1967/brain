@@ -1,0 +1,21 @@
+[project]
+name = "brain-importer"
+version = "0.1.0"
+description = "PDF and Markdown document importer for Brain"
+requires-python = ">=3.13"
+dependencies = [
+    "brain-core",
+    "brain-shared",
+    "pypdf>=5.0.0,<6",
+]
+
+[tool.uv.sources]
+brain-core = { workspace = true }
+brain-shared = { workspace = true }
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/brain"]
+
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"

@@ -1,0 +1,20 @@
+[project]
+name = "brain-core"
+version = "0.1.0"
+description = "Core configuration, event bus, and lifecycle management for Brain"
+requires-python = ">=3.13"
+dependencies = [
+    "brain-shared",
+    "pydantic-settings>=2.7,<3",
+    "python-dotenv>=1.0,<2",
+]
+
+[tool.uv.sources]
+brain-shared = { workspace = true }
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/brain"]
+
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"

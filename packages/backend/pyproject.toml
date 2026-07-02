@@ -1,0 +1,30 @@
+[project]
+name = "brain-backend"
+version = "0.1.0"
+description = "FastAPI backend server for Brain, coordinating core, storage, AI, search, and importer"
+requires-python = ">=3.13"
+dependencies = [
+    "brain-core",
+    "brain-shared",
+    "brain-storage",
+    "brain-importer",
+    "brain-ai",
+    "brain-search",
+    "fastapi>=0.115.0,<1",
+    "uvicorn>=0.32.0,<1",
+]
+
+[tool.uv.sources]
+brain-core = { workspace = true }
+brain-shared = { workspace = true }
+brain-storage = { workspace = true }
+brain-importer = { workspace = true }
+brain-ai = { workspace = true }
+brain-search = { workspace = true }
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/brain"]
+
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"

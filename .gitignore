@@ -1,14 +1,84 @@
-node_modules/
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
 dist/
 build/
-.env
-*.pyc
-__pycache__/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.whl
+*.manifest
+*.spec
+MANIFEST
+
+# Virtual environments
 .venv/
-*.db
-*.sqlite
-.vscode/
+venv/
+env/
+*.venv
+
+# IDE
 .idea/
-*.log
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+*.coverage
+coverage/
+coverage.xml
+htmlcov/
+.cache/
+junit/
+*.junit
+
+# Mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Ruff
+.ruff_cache/
+
+# Brain local data
+.brain/vectors/
+.brain/db/
+.brain/logs/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# OS
 .DS_Store
 Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Node (for web app)
+node_modules/
+.next/
+dist/
+
+# PyInstaller (desktop app)
+*.spec
+*.exe
+*.msi
+
+# Logs
+*.log
+logs/

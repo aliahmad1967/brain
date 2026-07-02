@@ -1,0 +1,15 @@
+[project]
+name = "brain-shared"
+version = "0.1.0"
+description = "Shared domain models, schemas, and exceptions for Brain"
+requires-python = ">=3.13"
+dependencies = [
+    "pydantic>=2.10,<3",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/brain"]
+
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"

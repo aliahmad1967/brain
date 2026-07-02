@@ -1,0 +1,23 @@
+[project]
+name = "brain-desktop"
+version = "0.1.0"
+description = "PySide6 desktop application for Brain"
+requires-python = ">=3.13"
+dependencies = [
+    "brain-core",
+    "brain-shared",
+    "brain-backend",
+    "PySide6>=6.8.0,<7",
+]
+
+[tool.uv.sources]
+brain-core = { workspace = true }
+brain-shared = { workspace = true }
+brain-backend = { workspace = true }
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/brain"]
+
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"

@@ -1,5 +1,112 @@
 [project]
 name = "brain"
 version = "0.1.0"
-description = "Brain project"
-requires-python = ">=3.11"
+description = "A local-first AI knowledge platform for importing, searching, and chatting with your documents."
+readme = "README.md"
+requires-python = ">=3.13"
+license = "MIT"
+keywords = ["ai", "knowledge-management", "rag", "local-first", "ollama", "qdrant"]
+authors = [
+    { name = "Brain Contributors" },
+]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+]
+
+dependencies = []
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B", "SIM", "ARG", "C4", "PL", "RUF"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+"tests/**/*.py" = ["PLR2004"]
+
+[tool.ruff.format]
+preview = true
+
+[tool.black]
+line-length = 100
+target-version = ["py313"]
+preview = true
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+ignore_missing_imports = true
+disallow_any_unimported = false
+no_implicit_reexport = true
+warn_unused_configs = true
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+addopts = "-v --tb=short --strict-markers"
+filterwarnings = [
+    "error",
+    "ignore::DeprecationWarning",
+]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.coverage.run]
+source = ["packages", "apps"]
+omit = ["tests/*"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 80
+
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+package = false
+dev-dependencies = [
+    "black>=24.0,<25",
+    "mypy>=1.13,<2",
+    "pytest>=8.0,<9",
+    "pytest-asyncio>=0.24.0,<0.26",
+    "pytest-cov>=6.0,<7",
+    "ruff>=0.8,<1",
+    "brain-shared",
+    "brain-core",
+    "brain-storage",
+    "brain-importer",
+    "brain-ai",
+    "brain-search",
+    "brain-backend",
+    "brain-desktop",
+]
+
+[tool.uv.sources]
+brain-shared = { workspace = true }
+brain-core = { workspace = true }
+brain-storage = { workspace = true }
+brain-importer = { workspace = true }
+brain-ai = { workspace = true }
+brain-search = { workspace = true }
+brain-backend = { workspace = true }
+brain-desktop = { workspace = true }
+
+[tool.uv.workspace]
+members = [
+    "packages/*",
+    "apps/desktop"
+]
