@@ -100,7 +100,7 @@ See [ROADMAP.md](ROADMAP.md) for the full development roadmap.
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Clone the repository
-git clone https://github.com/your-org/brain.git
+git clone https://github.com/aliahmad1967/brain.git
 cd brain
 
 # Create a virtual environment and install dependencies

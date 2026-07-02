@@ -78,7 +78,9 @@ build-backend = "hatchling.build"
 
 [tool.uv]
 package = false
-dev-dependencies = [
+
+[dependency-groups]
+dev = [
     "black>=24.0,<25",
     "mypy>=1.13,<2",
     "pytest>=8.0,<9",
