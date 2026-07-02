@@ -6,7 +6,7 @@ requires-python = ">=3.13"
 dependencies = [
     "brain-core",
     "brain-shared",
-    "pypdf>=5.0.0,<6",
+    "pypdf>=6.13.3,<7",
 ]
 
 [tool.uv.sources]
