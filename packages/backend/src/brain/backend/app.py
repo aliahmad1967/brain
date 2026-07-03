@@ -1,45 +1,56 @@
-"""FastAPI application bootstrap and lifecycle configuration."""
+"""FastAPI application bootstrap and runtime configuration for Brain backend."""
 
+import logging
 from collections.abc import AsyncGenerator
 from contextlib import asynccontextmanager
 
+from brain.backend.config import settings as backend_settings
+from brain.backend.exceptions import register_exception_handlers
+from brain.backend.logging import configure_logging
+from brain.backend.routers.system import router as system_router
 from brain.core import lifecycle
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 
-@asynccontextmanager
-async def lifespan(app: FastAPI) -> AsyncGenerator[None]:
-    """Manages FastAPI application startup and shutdown events."""
-    # Execute core package startup hooks
-    await lifecycle.startup()
-    yield
-    # Execute core package shutdown hooks
-    await lifecycle.shutdown()
-
-
 def create_app() -> FastAPI:
     """Create and configure the FastAPI application instance."""
+    backend_settings.ensure_dirs()
+    logger = configure_logging(backend_settings)
+    logger.info("Initializing Brain backend application")
+
+    @asynccontextmanager
+    async def lifespan(app: FastAPI) -> AsyncGenerator[None]:
+        app.state.settings = backend_settings
+        app.state.logger = logger
+
+        logger.debug("Starting application lifecycle")
+        await lifecycle.startup()
+        yield
+        logger.debug("Stopping application lifecycle")
+        await lifecycle.shutdown()
+
     app = FastAPI(
-        title="Brain API",
-        description="Local-first AI Knowledge Platform API",
-        version="0.1.0",
+        title=backend_settings.app_name,
+        description=backend_settings.description,
+        version=backend_settings.version,
+        debug=backend_settings.is_debug,
         lifespan=lifespan,
     )
 
-    # Enable CORS for desktop/web frontend clients
+    app.state.settings = backend_settings
+    app.state.logger = logger
+
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=["*"],
+        allow_origins=backend_settings.cors_origins,
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],
     )
 
-    @app.get("/health", tags=["System"])
-    async def health_check() -> dict[str, str]:
-        """Verify the server is running and accessible."""
-        return {"status": "healthy", "service": "brain-backend"}
+    register_exception_handlers(app)
+    app.include_router(system_router)
 
     return app
 
