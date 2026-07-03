@@ -55,19 +55,15 @@ class MainWindow(QMainWindow):
         self.backend_process: subprocess.Popen | None = None
         self.import_service = ImportService()
         self.metadata_store = SQLiteMetadataStore(settings.db_path)
-        self.vector_store = QdrantVectorStore(
-            url=settings.qdrant_url,
-            api_key=settings.qdrant_api_key,
-            collection_name=settings.vector_collection_name,
-            vector_size=settings.vector_dimension,
-        )
+        self.vector_store: QdrantVectorStore | None = None
         self.embedding_client = create_ollama_client_from_settings(
             settings.ollama_url, settings.embedding_model
         )
-        self.embedding_service = EmbeddingService(self.embedding_client, self.vector_store)
+        self.embedding_service: EmbeddingService | None = None
         self.llm_client = OllamaLLMClient(settings.ollama_url, settings.llm_model)
         self.chunker = TextChunker()
-        self.searcher = ReciprocalRankFusionSearcher(self.vector_store)
+        self.searcher: ReciprocalRankFusionSearcher | None = None
+        self.vector_store_available = False
         self.documents: list[Document] = []
 
         self._build_ui()
@@ -77,10 +73,38 @@ class MainWindow(QMainWindow):
     def _initialize_services(self) -> None:
         try:
             self.metadata_store.initialize()
+            self._append_status("Metadata store initialized.")
+        except Exception as error:
+            self._show_error("Initialization failed", error)
+            return
+
+        try:
+            self.vector_store = QdrantVectorStore(
+                url=settings.qdrant_url,
+                api_key=settings.qdrant_api_key,
+                collection_name=settings.vector_collection_name,
+                vector_size=settings.vector_dimension,
+            )
             self.vector_store.initialize()
-            self._append_status("Metadata store and vector store initialized.")
-        except Exception as exc:
-            self._show_error("Initialization failed", exc)
+            self.embedding_service = EmbeddingService(self.embedding_client, self.vector_store)
+            self.searcher = ReciprocalRankFusionSearcher(self.vector_store)
+            self.vector_store_available = True
+            self.storage_status_label.setText("Storage and AI services are initialized.")
+            self._append_status("Vector store initialized.")
+        except Exception:
+            self.vector_store = None
+            self.embedding_service = None
+            self.searcher = None
+            self.vector_store_available = False
+            self.storage_status_label.setText("Qdrant unavailable — search and chat are disabled.")
+            self._show_warning(
+                "Vector store unavailable",
+                (
+                    f"Could not connect to Qdrant at {settings.qdrant_url}. "
+                    "Import and metadata will still work, but search and chat "
+                    "require Qdrant to be running."
+                ),
+            )
 
         self._load_documents()
 
@@ -251,6 +275,11 @@ class MainWindow(QMainWindow):
         QMessageBox.critical(self, title, f"{error}\n\n{detail}")
         self.statusBar().showMessage(f"Error: {error}")
 
+    def _show_warning(self, title: str, message: str) -> None:
+        logger.warning("%s: %s", title, message)
+        QMessageBox.warning(self, title, message)
+        self.statusBar().showMessage(message)
+
     def _load_documents(self) -> None:
         try:
             self.documents = self.metadata_store.list_documents()
@@ -293,14 +322,20 @@ class MainWindow(QMainWindow):
                 document = self.import_service.import_file(path)
                 self.metadata_store.save_document(document)
                 chunks = self.chunker.chunk_document(document)
-                self._run_async(
-                    self.embedding_service.embed_and_upsert(
-                        chunks, vector_size=settings.vector_dimension
+                if self.embedding_service is not None:
+                    self._run_async(
+                        self.embedding_service.embed_and_upsert(
+                            chunks, vector_size=settings.vector_dimension
+                        )
                     )
-                )
-                self._append_status(
-                    f"Imported '{document.name}' ({len(chunks)} chunks) and indexed embeddings."
-                )
+                    self._append_status(
+                        f"Imported '{document.name}' ({len(chunks)} chunks) and indexed embeddings."
+                    )
+                else:
+                    self._append_status(
+                        f"Imported '{document.name}' ({len(chunks)} chunks). "
+                        "Qdrant unavailable, so embeddings were not indexed."
+                    )
             except Exception as exc:
                 self._show_error(f"Failed to import {path.name}", exc)
 
@@ -310,6 +345,17 @@ class MainWindow(QMainWindow):
         query = self.search_input.text().strip()
         if not query:
             self._append_status("Enter a search query first.")
+            return
+
+        if (
+            not self.vector_store_available
+            or self.searcher is None
+            or self.embedding_service is None
+        ):
+            self._show_warning(
+                "Search unavailable",
+                "Qdrant is unavailable. Start Qdrant and restart the app to enable search.",
+            )
             return
 
         try:
@@ -332,6 +378,17 @@ class MainWindow(QMainWindow):
         question = self.chat_input.text().strip()
         if not question:
             self._append_status("Enter a question first.")
+            return
+
+        if (
+            not self.vector_store_available
+            or self.searcher is None
+            or self.embedding_service is None
+        ):
+            self._show_warning(
+                "Chat unavailable",
+                "Qdrant is unavailable. Start Qdrant and restart the app to enable chat.",
+            )
             return
 
         try:
