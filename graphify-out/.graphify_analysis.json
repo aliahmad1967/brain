@@ -1,0 +1,678 @@
+{
+  "communities": {
+    "0": [
+      "basemodel",
+      "packages_backend_src_brain_backend_routers_init_py",
+      "packages_backend_src_brain_backend_routers_system_py",
+      "packages_search_src_brain_search_hybrid_py",
+      "packages_shared_src_brain_shared_models_py",
+      "packages_storage_src_brain_storage_vector_py",
+      "protocol",
+      "routers_init_rationale_1",
+      "routers_system_health_check",
+      "routers_system_version_endpoint",
+      "routers_system_versionresponse",
+      "search_hybrid_hybridsearcher",
+      "search_hybrid_rationale_1",
+      "search_hybrid_rationale_14",
+      "search_hybrid_rationale_20",
+      "search_hybrid_rationale_24",
+      "search_hybrid_rationale_29",
+      "search_hybrid_rationale_46",
+      "search_hybrid_rationale_55",
+      "search_hybrid_reciprocalrankfusionsearcher",
+      "search_hybrid_reciprocalrankfusionsearcher_init",
+      "search_hybrid_reciprocalrankfusionsearcher_search",
+      "search_hybrid_search",
+      "search_hybrid_vectorstoreprotocol",
+      "search_hybrid_vectorstoreprotocol_search",
+      "search_hybrid_vectorstoreprotocol_search_keyword",
+      "shared_models_documentchunk",
+      "shared_models_get_utc_now",
+      "shared_models_rationale_1",
+      "shared_models_rationale_10",
+      "shared_models_rationale_30",
+      "shared_models_rationale_44",
+      "shared_models_searchresult",
+      "storage_vector_delete_document_chunks",
+      "storage_vector_initialize",
+      "storage_vector_qdrantvectorstore",
+      "storage_vector_qdrantvectorstore_delete_document_chunks",
+      "storage_vector_qdrantvectorstore_init",
+      "storage_vector_qdrantvectorstore_initialize",
+      "storage_vector_qdrantvectorstore_search",
+      "storage_vector_qdrantvectorstore_search_keyword",
+      "storage_vector_qdrantvectorstore_upsert_chunks",
+      "storage_vector_rationale_1",
+      "storage_vector_rationale_17",
+      "storage_vector_rationale_46",
+      "storage_vector_rationale_63",
+      "storage_vector_search",
+      "storage_vector_search_keyword",
+      "storage_vector_upsert_chunks",
+      "storage_vector_vectorstore",
+      "tests_unit_test_search_py",
+      "unit_test_search_rationale_1",
+      "unit_test_search_test_lexical_density_reranker"
+    ],
+    "1": [
+      "shared_exceptions_rationale_23",
+      "shared_exceptions_storageerror",
+      "storage_metadata_rationale_200",
+      "storage_metadata_rationale_218",
+      "storage_metadata_sqlitemetadatastore",
+      "storage_metadata_sqlitemetadatastore_add_document_to_collection",
+      "storage_metadata_sqlitemetadatastore_apply_initial_schema",
+      "storage_metadata_sqlitemetadatastore_apply_migrations",
+      "storage_metadata_sqlitemetadatastore_create_conversation",
+      "storage_metadata_sqlitemetadatastore_delete_collection",
+      "storage_metadata_sqlitemetadatastore_delete_conversation",
+      "storage_metadata_sqlitemetadatastore_delete_document",
+      "storage_metadata_sqlitemetadatastore_delete_tag",
+      "storage_metadata_sqlitemetadatastore_get_collection",
+      "storage_metadata_sqlitemetadatastore_get_connection",
+      "storage_metadata_sqlitemetadatastore_get_conversation",
+      "storage_metadata_sqlitemetadatastore_get_document",
+      "storage_metadata_sqlitemetadatastore_get_import_history",
+      "storage_metadata_sqlitemetadatastore_get_messages",
+      "storage_metadata_sqlitemetadatastore_get_schema_version",
+      "storage_metadata_sqlitemetadatastore_get_tag",
+      "storage_metadata_sqlitemetadatastore_index_statements",
+      "storage_metadata_sqlitemetadatastore_init",
+      "storage_metadata_sqlitemetadatastore_initialize",
+      "storage_metadata_sqlitemetadatastore_list_collections",
+      "storage_metadata_sqlitemetadatastore_list_conversations",
+      "storage_metadata_sqlitemetadatastore_list_documents",
+      "storage_metadata_sqlitemetadatastore_list_documents_for_tag",
+      "storage_metadata_sqlitemetadatastore_list_documents_in_collection",
+      "storage_metadata_sqlitemetadatastore_list_import_history",
+      "storage_metadata_sqlitemetadatastore_list_tags",
+      "storage_metadata_sqlitemetadatastore_list_tags_for_document",
+      "storage_metadata_sqlitemetadatastore_migrate_v1_to_v2",
+      "storage_metadata_sqlitemetadatastore_record_import_history",
+      "storage_metadata_sqlitemetadatastore_remove_document_from_collection",
+      "storage_metadata_sqlitemetadatastore_save_collection",
+      "storage_metadata_sqlitemetadatastore_save_document",
+      "storage_metadata_sqlitemetadatastore_save_message",
+      "storage_metadata_sqlitemetadatastore_save_tag",
+      "storage_metadata_sqlitemetadatastore_schema_statements",
+      "storage_metadata_sqlitemetadatastore_schema_version_table_exists",
+      "storage_metadata_sqlitemetadatastore_set_schema_version",
+      "storage_metadata_sqlitemetadatastore_table_exists",
+      "storage_metadata_sqlitemetadatastore_tag_document",
+      "storage_metadata_sqlitemetadatastore_to_collection",
+      "storage_metadata_sqlitemetadatastore_to_document",
+      "storage_metadata_sqlitemetadatastore_to_import_history",
+      "storage_metadata_sqlitemetadatastore_to_tag",
+      "storage_metadata_sqlitemetadatastore_untag_document",
+      "storage_metadata_sqlitemetadatastore_v2_statements"
+    ],
+    "2": [
+      "documentimporter",
+      "importer_base_documentimporter",
+      "importer_base_rationale_10",
+      "importer_markdown_markdownimporter",
+      "importer_markdown_markdownimporter_import_file",
+      "importer_markdown_markdownimporter_supports",
+      "importer_markdown_rationale_1",
+      "importer_markdown_rationale_12",
+      "importer_pdf_pdfimporter",
+      "importer_pdf_pdfimporter_import_file",
+      "importer_pdf_pdfimporter_supports",
+      "importer_pdf_rationale_1",
+      "importer_pdf_rationale_12",
+      "importer_service_importservice",
+      "importer_service_importservice_get_importer_for_path",
+      "importer_service_importservice_import_file",
+      "importer_service_importservice_init",
+      "importer_service_rationale_1",
+      "importer_service_rationale_14",
+      "importer_service_rationale_20",
+      "importer_txt_rationale_1",
+      "importer_txt_rationale_11",
+      "importer_txt_txtimporter",
+      "importer_txt_txtimporter_import_file",
+      "importer_txt_txtimporter_supports",
+      "packages_importer_src_brain_importer_markdown_py",
+      "packages_importer_src_brain_importer_pdf_py",
+      "packages_importer_src_brain_importer_service_py",
+      "packages_importer_src_brain_importer_txt_py",
+      "shared_exceptions_documentimporterror",
+      "shared_exceptions_rationale_17",
+      "shared_models_document",
+      "shared_models_rationale_15",
+      "tests_unit_test_importer_py",
+      "tests_unit_test_shared_py",
+      "unit_test_importer_rationale_1",
+      "unit_test_importer_test_import_service_dispatches_to_correct_importer",
+      "unit_test_importer_test_import_service_rejects_unsupported_file_type",
+      "unit_test_importer_test_markdown_importer_parsing",
+      "unit_test_importer_test_markdown_importer_supports",
+      "unit_test_importer_test_pdf_importer_supports_and_parses",
+      "unit_test_importer_test_txt_importer_supports_and_parses",
+      "unit_test_shared_rationale_1",
+      "unit_test_shared_test_document_chunk_creation",
+      "unit_test_shared_test_document_creation",
+      "unit_test_shared_test_exceptions_inheritance"
+    ],
+    "3": [
+      "abc",
+      "ai_embeddings_create_ollama_client_from_settings",
+      "ai_embeddings_embed_documents",
+      "ai_embeddings_embed_query",
+      "ai_embeddings_embeddingsclient",
+      "ai_embeddings_embeddingservice",
+      "ai_embeddings_embeddingservice_embed_and_upsert",
+      "ai_embeddings_embeddingservice_embed_documents",
+      "ai_embeddings_embeddingservice_embed_query",
+      "ai_embeddings_embeddingservice_init",
+      "ai_embeddings_ollamaembeddingsclient",
+      "ai_embeddings_ollamaembeddingsclient_embed_documents",
+      "ai_embeddings_ollamaembeddingsclient_embed_query",
+      "ai_embeddings_ollamaembeddingsclient_init",
+      "ai_embeddings_rationale_1",
+      "ai_embeddings_rationale_100",
+      "ai_embeddings_rationale_124",
+      "ai_embeddings_rationale_21",
+      "ai_embeddings_rationale_33",
+      "ai_embeddings_rationale_83",
+      "ai_llm_chat",
+      "ai_llm_chat_stream",
+      "ai_llm_generate",
+      "ai_llm_llmclient",
+      "ai_llm_ollamallmclient",
+      "ai_llm_ollamallmclient_chat",
+      "ai_llm_ollamallmclient_chat_stream",
+      "ai_llm_ollamallmclient_generate",
+      "ai_llm_ollamallmclient_init",
+      "ai_llm_rationale_1",
+      "ai_llm_rationale_16",
+      "ai_llm_rationale_35",
+      "importer_base_import_file",
+      "importer_base_rationale_1",
+      "importer_base_supports",
+      "packages_ai_src_brain_ai_embeddings_py",
+      "packages_ai_src_brain_ai_llm_py",
+      "packages_importer_src_brain_importer_base_py",
+      "shared_exceptions_aierror",
+      "shared_exceptions_rationale_29",
+      "shared_models_chatmessage",
+      "shared_models_rationale_51",
+      "storage_metadata_metadatastore",
+      "storage_metadata_rationale_51"
+    ],
+    "4": [
+      "packages_storage_src_brain_storage_metadata_py",
+      "storage_metadata_add_document_to_collection",
+      "storage_metadata_create_conversation",
+      "storage_metadata_delete_collection",
+      "storage_metadata_delete_conversation",
+      "storage_metadata_delete_document",
+      "storage_metadata_delete_tag",
+      "storage_metadata_get_collection",
+      "storage_metadata_get_conversation",
+      "storage_metadata_get_document",
+      "storage_metadata_get_import_history",
+      "storage_metadata_get_messages",
+      "storage_metadata_get_tag",
+      "storage_metadata_initialize",
+      "storage_metadata_list_collections",
+      "storage_metadata_list_conversations",
+      "storage_metadata_list_documents",
+      "storage_metadata_list_documents_for_tag",
+      "storage_metadata_list_documents_in_collection",
+      "storage_metadata_list_import_history",
+      "storage_metadata_list_tags",
+      "storage_metadata_list_tags_for_document",
+      "storage_metadata_rationale_1",
+      "storage_metadata_record_import_history",
+      "storage_metadata_remove_document_from_collection",
+      "storage_metadata_save_collection",
+      "storage_metadata_save_document",
+      "storage_metadata_save_message",
+      "storage_metadata_save_tag",
+      "storage_metadata_tag_document",
+      "storage_metadata_untag_document"
+    ],
+    "5": [
+      "core_config_db_path",
+      "core_config_rationale_1",
+      "core_config_rationale_10",
+      "core_config_rationale_48",
+      "core_config_settings",
+      "core_config_settings_ensure_dirs",
+      "core_lifecycle_lifecyclemanager",
+      "core_lifecycle_lifecyclemanager_init",
+      "core_lifecycle_lifecyclemanager_register_shutdown",
+      "core_lifecycle_lifecyclemanager_register_startup",
+      "core_lifecycle_lifecyclemanager_shutdown",
+      "core_lifecycle_lifecyclemanager_startup",
+      "core_lifecycle_rationale_1",
+      "core_lifecycle_rationale_14",
+      "core_lifecycle_rationale_22",
+      "core_lifecycle_rationale_27",
+      "core_lifecycle_rationale_32",
+      "core_lifecycle_rationale_50",
+      "packages_core_src_brain_core_config_py",
+      "packages_core_src_brain_core_lifecycle_py",
+      "tests_unit_test_core_py",
+      "unit_test_core_rationale_1",
+      "unit_test_core_test_event_bus_pub_sub",
+      "unit_test_core_test_lifecycle_manager",
+      "unit_test_core_test_settings_default_values"
+    ],
+    "6": [
+      "backend_app_create_app",
+      "backend_app_rationale_1",
+      "backend_app_rationale_17",
+      "backend_config_backendsettings",
+      "backend_config_backendsettings_ensure_dirs",
+      "backend_config_get_package_version",
+      "backend_config_is_debug",
+      "backend_config_normalize_cors_origins",
+      "backend_config_rationale_18",
+      "backend_di_get_logger",
+      "backend_di_get_settings",
+      "backend_exceptions_register_exception_handlers",
+      "backend_logging_configure_logging",
+      "basesettings",
+      "packages_backend_src_brain_backend_app_py",
+      "packages_backend_src_brain_backend_config_py",
+      "packages_backend_src_brain_backend_di_py",
+      "packages_backend_src_brain_backend_logging_py"
+    ],
+    "7": [
+      "backend_exceptions_applicationerror",
+      "backend_exceptions_applicationerror_init",
+      "backend_exceptions_rationale_21",
+      "backend_exceptions_resourcenotfounderror",
+      "exception",
+      "packages_backend_src_brain_backend_exceptions_py",
+      "packages_shared_src_brain_shared_exceptions_py",
+      "shared_exceptions_brainerror",
+      "shared_exceptions_configurationerror",
+      "shared_exceptions_rationale_1",
+      "shared_exceptions_rationale_11",
+      "shared_exceptions_rationale_35",
+      "shared_exceptions_rationale_5",
+      "shared_exceptions_searcherror"
+    ],
+    "8": [
+      "core_events_eventbus",
+      "core_events_eventbus_init",
+      "core_events_eventbus_publish",
+      "core_events_eventbus_safe_execute_async",
+      "core_events_eventbus_safe_execute_sync",
+      "core_events_eventbus_subscribe",
+      "core_events_eventbus_unsubscribe",
+      "core_events_rationale_1",
+      "core_events_rationale_17",
+      "core_events_rationale_24",
+      "core_events_rationale_31",
+      "core_events_rationale_40",
+      "packages_core_src_brain_core_events_py"
+    ],
+    "9": [
+      "shared_models_conversation",
+      "shared_models_rationale_60",
+      "storage_metadata_collection",
+      "storage_metadata_importhistory",
+      "storage_metadata_rationale_19",
+      "storage_metadata_rationale_30",
+      "storage_metadata_rationale_39",
+      "storage_metadata_tag",
+      "tests_unit_test_storage_py",
+      "unit_test_storage_rationale_1",
+      "unit_test_storage_test_sqlite_metadata_store_collections_and_tags",
+      "unit_test_storage_test_sqlite_metadata_store_documents_and_conversations",
+      "unit_test_storage_test_sqlite_metadata_store_import_history"
+    ],
+    "10": [
+      "packages_search_src_brain_search_reranker_py",
+      "search_reranker_lexicaldensityreranker",
+      "search_reranker_lexicaldensityreranker_init",
+      "search_reranker_lexicaldensityreranker_rerank",
+      "search_reranker_lexicaldensityreranker_tokenize",
+      "search_reranker_rationale_1",
+      "search_reranker_rationale_10",
+      "search_reranker_rationale_27",
+      "search_reranker_rationale_30",
+      "search_reranker_rationale_39",
+      "search_reranker_rerank",
+      "search_reranker_reranker"
+    ],
+    "11": [
+      "apps_desktop_src_brain_desktop_main_py",
+      "desktop_main_main",
+      "desktop_main_mainwindow",
+      "desktop_main_mainwindow_init",
+      "desktop_main_rationale_1",
+      "desktop_main_rationale_13",
+      "desktop_main_rationale_22",
+      "qmainwindow"
+    ],
+    "12": [
+      "ai_prompts_format_rag_system",
+      "ai_prompts_format_rag_user",
+      "ai_prompts_format_summary_system",
+      "ai_prompts_format_summary_user",
+      "ai_prompts_promptmanager",
+      "ai_prompts_rationale_1",
+      "ai_prompts_rationale_5",
+      "packages_ai_src_brain_ai_prompts_py"
+    ],
+    "13": [
+      "ai_chunker_rationale_1",
+      "ai_chunker_rationale_10",
+      "ai_chunker_textchunker",
+      "ai_chunker_textchunker_chunk_document",
+      "ai_chunker_textchunker_init",
+      "packages_ai_src_brain_ai_chunker_py"
+    ],
+    "14": [
+      "ai_context_builder_contextbuilder",
+      "ai_context_builder_contextbuilder_build",
+      "ai_context_builder_contextbuilder_init",
+      "ai_context_builder_rationale_1",
+      "ai_context_builder_rationale_9",
+      "packages_ai_src_brain_ai_context_builder_py"
+    ],
+    "15": [
+      "tests_unit_test_ai_py",
+      "unit_test_ai_rationale_1",
+      "unit_test_ai_test_prompt_manager_rag_formatting",
+      "unit_test_ai_test_prompt_manager_summary_formatting"
+    ],
+    "16": [
+      "apps_web_src_app_tsx",
+      "apps_web_src_main_tsx",
+      "src_app_app"
+    ],
+    "17": [
+      "apps_desktop_src_brain_desktop_init_py",
+      "desktop_init_rationale_1"
+    ],
+    "18": [
+      "ai_init_rationale_1",
+      "packages_ai_src_brain_ai_init_py"
+    ],
+    "19": [
+      "backend_init_rationale_1",
+      "packages_backend_src_brain_backend_init_py"
+    ],
+    "20": [
+      "core_init_rationale_1",
+      "packages_core_src_brain_core_init_py"
+    ],
+    "21": [
+      "importer_init_rationale_1",
+      "packages_importer_src_brain_importer_init_py"
+    ],
+    "22": [
+      "packages_search_src_brain_search_init_py",
+      "search_init_rationale_1"
+    ],
+    "23": [
+      "packages_shared_src_brain_shared_init_py",
+      "shared_init_rationale_1"
+    ],
+    "24": [
+      "packages_storage_src_brain_storage_init_py",
+      "storage_init_rationale_1"
+    ],
+    "25": [
+      "apps_web_vite_config_ts"
+    ],
+    "26": [
+      "ai_embeddings_rationale_25"
+    ],
+    "27": [
+      "ai_embeddings_rationale_29"
+    ],
+    "28": [
+      "ai_llm_rationale_20"
+    ],
+    "29": [
+      "ai_llm_rationale_25"
+    ],
+    "30": [
+      "ai_llm_rationale_30"
+    ],
+    "31": [
+      "ai_prompts_rationale_28"
+    ],
+    "32": [
+      "ai_prompts_rationale_33"
+    ],
+    "33": [
+      "ai_prompts_rationale_38"
+    ],
+    "34": [
+      "ai_prompts_rationale_43"
+    ],
+    "35": [
+      "core_config_rationale_44"
+    ],
+    "36": [
+      "importer_base_rationale_14"
+    ],
+    "37": [
+      "importer_base_rationale_26"
+    ],
+    "38": [
+      "search_hybrid_rationale_35"
+    ],
+    "39": [
+      "search_reranker_rationale_14"
+    ],
+    "40": [
+      "storage_metadata_rationale_55"
+    ],
+    "41": [
+      "storage_metadata_rationale_60"
+    ],
+    "42": [
+      "storage_metadata_rationale_65"
+    ],
+    "43": [
+      "storage_metadata_rationale_70"
+    ],
+    "44": [
+      "storage_metadata_rationale_75"
+    ],
+    "45": [
+      "storage_metadata_rationale_80"
+    ],
+    "46": [
+      "storage_metadata_rationale_85"
+    ],
+    "47": [
+      "storage_metadata_rationale_90"
+    ],
+    "48": [
+      "storage_metadata_rationale_95"
+    ],
+    "49": [
+      "storage_metadata_rationale_105"
+    ],
+    "50": [
+      "storage_metadata_rationale_115"
+    ],
+    "51": [
+      "storage_metadata_rationale_120"
+    ],
+    "52": [
+      "storage_metadata_rationale_125"
+    ],
+    "53": [
+      "storage_metadata_rationale_130"
+    ],
+    "54": [
+      "storage_metadata_rationale_135"
+    ],
+    "55": [
+      "storage_metadata_rationale_140"
+    ],
+    "56": [
+      "storage_metadata_rationale_145"
+    ],
+    "57": [
+      "storage_metadata_rationale_150"
+    ],
+    "58": [
+      "storage_metadata_rationale_155"
+    ],
+    "59": [
+      "storage_metadata_rationale_160"
+    ],
+    "60": [
+      "storage_metadata_rationale_165"
+    ],
+    "61": [
+      "storage_metadata_rationale_170"
+    ],
+    "62": [
+      "storage_metadata_rationale_175"
+    ],
+    "63": [
+      "storage_metadata_rationale_180"
+    ],
+    "64": [
+      "storage_metadata_rationale_185"
+    ],
+    "65": [
+      "storage_metadata_rationale_190"
+    ],
+    "66": [
+      "storage_metadata_rationale_195"
+    ],
+    "67": [
+      "storage_vector_rationale_21"
+    ],
+    "68": [
+      "storage_vector_rationale_26"
+    ],
+    "69": [
+      "storage_vector_rationale_31"
+    ],
+    "70": [
+      "storage_vector_rationale_36"
+    ],
+    "71": [
+      "storage_vector_rationale_41"
+    ],
+    "72": [
+      "scripts_setup_ps1"
+    ]
+  },
+  "cohesion": {},
+  "god_nodes": [
+    {
+      "id": "storage_metadata_sqlitemetadatastore",
+      "label": "SQLiteMetadataStore",
+      "degree": 55
+    },
+    {
+      "id": "shared_exceptions_storageerror",
+      "label": "StorageError",
+      "degree": 46
+    },
+    {
+      "id": "shared_models_document",
+      "label": "Document",
+      "degree": 22
+    },
+    {
+      "id": "shared_models_searchresult",
+      "label": "SearchResult",
+      "degree": 16
+    },
+    {
+      "id": "shared_exceptions_aierror",
+      "label": "AIError",
+      "degree": 14
+    },
+    {
+      "id": "shared_models_documentchunk",
+      "label": "DocumentChunk",
+      "degree": 14
+    },
+    {
+      "id": "importer_service_importservice",
+      "label": "ImportService",
+      "degree": 13
+    },
+    {
+      "id": "shared_models_chatmessage",
+      "label": "ChatMessage",
+      "degree": 13
+    },
+    {
+      "id": "importer_markdown_markdownimporter",
+      "label": "MarkdownImporter",
+      "degree": 12
+    },
+    {
+      "id": "shared_exceptions_documentimporterror",
+      "label": "DocumentImportError",
+      "degree": 12
+    }
+  ],
+  "surprises": [
+    {
+      "source": "test_event_bus_pub_sub()",
+      "target": "EventBus",
+      "source_files": [
+        "tests/unit/test_core.py",
+        "packages/core/src/brain/core/events.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities; peripheral node `test_event_bus_pub_sub()` unexpectedly reaches hub `EventBus`"
+    },
+    {
+      "source": "test_document_chunk_creation()",
+      "target": "DocumentChunk",
+      "source_files": [
+        "tests/unit/test_shared.py",
+        "packages/shared/src/brain/shared/models.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; bridges separate communities; peripheral node `test_document_chunk_creation()` unexpectedly reaches hub `DocumentChunk`"
+    },
+    {
+      "source": "test_settings_default_values()",
+      "target": "Settings",
+      "source_files": [
+        "tests/unit/test_core.py",
+        "packages/core/src/brain/core/config.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; peripheral node `test_settings_default_values()` unexpectedly reaches hub `Settings`"
+    },
+    {
+      "source": "test_lifecycle_manager()",
+      "target": "LifecycleManager",
+      "source_files": [
+        "tests/unit/test_core.py",
+        "packages/core/src/brain/core/lifecycle.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; peripheral node `test_lifecycle_manager()` unexpectedly reaches hub `LifecycleManager`"
+    },
+    {
+      "source": "test_markdown_importer_supports()",
+      "target": "MarkdownImporter",
+      "source_files": [
+        "tests/unit/test_importer.py",
+        "packages/importer/src/brain/importer/markdown.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "calls",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; peripheral node `test_markdown_importer_supports()` unexpectedly reaches hub `MarkdownImporter`"
+    }
+  ]
+}
