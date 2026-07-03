@@ -30,12 +30,14 @@ class Settings(BaseSettings):
     qdrant_url: str = "http://localhost:6333"
     qdrant_api_key: str | None = None
     vector_collection_name: str = "documents"
-    vector_dimension: int = 768
+    # Use 4096 to match `bge-m3` embedding size by default. Can be overridden.
+    vector_dimension: int = 4096
 
     # AI / Ollama
     ollama_url: str = "http://localhost:11434"
     llm_model: str = "llama3.2"
-    embedding_model: str = "nomic-embed-text"
+    # Default embedding model: `bge-m3` (provider-specific model name)
+    embedding_model: str = "bge-m3"
 
     @property
     def db_path(self) -> Path:
